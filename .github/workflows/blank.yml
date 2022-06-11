@@ -15,8 +15,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name : checkout repo
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+
+      - name : python installation
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'
+
+      - name : run hello python
       - run: python src/main.py
+
+      #- name : install coverage
+      
+      #- name : install pytest
