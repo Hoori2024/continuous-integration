@@ -27,8 +27,7 @@ jobs:
         run: python src/main.py
         
       - name : install coverage
-        run : |
-          pip install coverage
+        run : pip install coverage
 
       - name : install pytest
         run : pip install pytest
