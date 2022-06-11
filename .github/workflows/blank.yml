@@ -33,5 +33,8 @@ jobs:
       - name : install pytest
         run : pip install pytest
 
-      - name : run coverage and pytest
+      - name : coverage and pytest
         run : coverage run -m pytest
+
+      - name : coverage report
+        run : coverage report --include=src/operations.py
