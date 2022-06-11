@@ -26,10 +26,13 @@ jobs:
       - name : run hello python
         run: python src/main.py
         
-      - name : test
+      - name : install coverage
         run : |
           pip install coverage
-        
+
+      - name : install pytest
+        run : pip install pytest
+      
       - name : coverage install
         uses: romeovs/lcov-reporter-action@v0.2.16
         with:
