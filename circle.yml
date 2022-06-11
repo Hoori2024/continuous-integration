@@ -1,0 +1,27 @@
+version: 2.1
+jobs:
+  say-hello:
+    docker:
+      - image: cimg/python:3.10.4
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: python src/main.py
+      - run:
+          name: "install pytest"
+          command: pip install pytest
+      - run:
+          name: "install coverage"
+          command: pip install coverage
+      - run:
+          name: "coverage run"
+          command: coverage run -m pytest
+      - run:
+          name: "coverage report"
+          command: coverage report --include=src/operations.py
+
+workflows:
+  say-hello-workflow:
+    jobs:
+      - say-hello
