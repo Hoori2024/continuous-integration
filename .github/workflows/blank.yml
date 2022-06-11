@@ -32,12 +32,6 @@ jobs:
 
       - name : install pytest
         run : pip install pytest
-      
-      - name : coverage install
-        uses: romeovs/lcov-reporter-action@v0.2.16
-        with:
-          lcov-file: ./coverage/lcov.info
 
-      #- name : install coverage
-      
-      #- name : install pytest
+      - name : run coverage and pytest
+        run : coverage run -m pytest
