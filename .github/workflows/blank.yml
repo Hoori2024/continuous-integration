@@ -23,7 +23,7 @@ jobs:
           python-version: '3.10'
 
       - name : run hello python
-      - run: python src/main.py
+        run: python src/main.py
 
       #- name : install coverage
       
